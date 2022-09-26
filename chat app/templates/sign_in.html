@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dabody chat app</title>
+
+</head>
+<body>
+
+    <h1 id="titile">SIGN IN</h1>
+
+    <div id="line"></div>
+
+    <form action="/sign_in" method="POST">
+        <input type="text" id="userName" placeholder="Name" name="name">
+        <input type="email" id="email" placeholder="Email" name="email">
+        <input type="password" id="password" placeholder="Password" name="password">
+        <h6 id="txt"></h6>
+        <button id="sumbmit">SUMBMIT</button>
+        <h6 id="text" style="font-family: system-ui;">DONT HAVE AN ACOUNT? <a style="color:rgb(247, 4, 105);" href="http://CHANGE YOU'R IP ADDRESS:80/sign_up" </a>>SIGN UP!</a></h6>
+    </form>
+
+
+    <h3 id="error_message">{{ error }}</h3>
+    <h3 id="login"></h3>
+    <h3 id="invaldAcount"></h3>
+    
+
+<style>
+        body{
+    background-color: #222;
+}
+
+#userName{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 100px;
+}
+
+#email{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 10px;
+
+}
+
+
+#password{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 10px;
+
+}
+
+
+
+#sumbmit{
+    margin-left: 670px;
+    border-radius: 20px;
+    font-family: system-ui;
+    font-size: medium;
+    border: black solid 2px;
+    background-color: rgb(221, 6, 96);
+    width: 200px;
+    height: 50px;
+    transition: 0.5s;
+    color: white; 
+    
+}
+
+#sumbmit:hover{
+    background-color: rgb(247, 4, 105);
+    letter-spacing: 1px;
+
+}
+
+input:focus{
+    background-color: black;
+    border: white solid 5px;
+    color: white;
+    transform: scale(1.1);
+}
+
+#txt{
+    opacity: 0;
+}
+
+#text{
+    color: white;
+    margin-left: 680px;
+    margin-top: 100px;
+}
+
+h3{
+    color: red;
+    font-family: system-ui;
+    margin-left: 635px;
+    
+}
+
+
+
+
+
+
+body{
+    background-color: #222;
+}
+
+#userName2{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 100px;
+}
+
+#email2{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 10px;
+
+}
+
+#password2{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 10px;
+
+}
+
+
+
+#create{
+    margin-left: 670px;
+    border-radius: 20px;
+    font-family: system-ui;
+    font-size: medium;
+    border: black solid 2px;
+    background-color: rgb(221, 6, 96);
+    width: 200px;
+    height: 50px;
+    transition: 0.5s; 
+    color: white;
+    
+}
+
+#create:hover{
+    background-color: rgb(247, 4, 105);
+    letter-spacing: 1px;
+
+}
+
+
+#txt2{
+    opacity: 0;
+}
+
+
+#titile{
+    color: white;
+    font-family: system-ui;
+    margin-left: 720px;
+}
+
+#line{
+    background-color: white;
+    width: 200px;
+    height: 2px;
+    margin-left: 685px;
+}
+
+
+#line2{
+    background-color: white;
+    width: 200px;
+    height: 2px;
+    margin-left: 685px;
+}
+
+#message{
+    color: rgb(2, 194, 2);
+    font-family: system-ui;
+    margin-left: 620px;
+}
+
+#login{
+    color: rgb(2, 194, 2);
+    font-family: system-ui;
+    margin-left: 620px;
+}
+
+#delete{
+    color: white;
+    font-family: system-ui;
+    text-decoration: underline;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 50px;
+}
+
+#error_message{
+    margin-left: 690px;
+}
+</style>
+
+
+</body>
+</html>

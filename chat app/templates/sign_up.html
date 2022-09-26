@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dabody chat app</title>
+</head>
+<body>
+    <h1 id="titile">SIGN UP</h1>
+    <div id="line2"></div>
+
+    <form action="/real_sign_up" method="POST">
+        <input type="text" id="userName2" placeholder="Name" name="name2">
+        <input type="email" id="email2" placeholder="Email" name="email2">
+        <input type="password" id="password2" placeholder="Password" name="password2">
+        <button id="create">CREAT ACOUNT</button>
+        <h6 id="txt2">HAVE AN ACOUNT? <a style="color:rgb(247, 4, 105);" href="http://CHANGE YOU'R IP ADDRESS:80/sign_in">SIGN IN!</a></h6>
+    </form>
+
+    <h3 id="already"></h3>
+    <h3 id="message">{{ error_msg }}</h3>
+
+    
+    <style>
+        body{
+    background-color: #222;
+}
+
+#userName{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 100px;
+}
+
+#email{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 10px;
+
+}
+
+
+#password{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 10px;
+
+}
+
+
+
+#sumbmit{
+    margin-left: 670px;
+    border-radius: 20px;
+    font-family: system-ui;
+    font-size: medium;
+    border: black solid 2px;
+    background-color: rgb(221, 6, 96);
+    width: 200px;
+    height: 50px;
+    transition: 0.5s;
+    color: white; 
+    
+}
+
+#sumbmit:hover{
+    background-color: rgb(247, 4, 105);
+    letter-spacing: 1px;
+
+}
+
+input:focus{
+    background-color: black;
+    border: white solid 5px;
+    color: white;
+    transform: scale(1.1);
+}
+
+
+#text{
+    color: white;
+    margin-left: 680px;
+    margin-top: 100px;
+}
+
+h3{
+    color: red;
+    font-family: system-ui;
+    margin-left: 635px;
+    
+}
+
+
+
+
+
+
+body{
+    background-color: #222;
+}
+
+#userName2{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 100px;
+}
+
+#email2{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 10px;
+
+}
+
+#password2{
+    width: 400px;
+    border-radius: 20px;
+    border: black 3px solid;
+    padding: 10px;
+    margin-left: 570px;
+    margin-top: 10px;
+
+}
+
+
+
+#create{
+    margin-left: 670px;
+    border-radius: 20px;
+    font-family: system-ui;
+    font-size: medium;
+    border: black solid 2px;
+    background-color: rgb(221, 6, 96);
+    width: 200px;
+    height: 50px;
+    transition: 0.5s; 
+    color: white;
+    margin-top: 20px;
+    
+}
+
+#create:hover{
+    background-color: rgb(247, 4, 105);
+    letter-spacing: 1px;
+
+}
+
+
+
+#titile{
+    color: white;
+    font-family: system-ui;
+    margin-left: 720px;
+}
+
+#line{
+    background-color: white;
+    width: 200px;
+    height: 2px;
+    margin-left: 685px;
+}
+
+
+#line2{
+    background-color: white;
+    width: 200px;
+    height: 2px;
+    margin-left: 685px;
+}
+
+#message{
+    color: red;
+    font-family: system-ui;
+    margin-left: 660px;
+}
+
+#login{
+    color: rgb(2, 194, 2);
+    font-family: system-ui;
+    margin-left: 620px;
+}
+
+#delete{
+    color: white;
+    font-family: system-ui;
+    text-decoration: underline;
+    cursor: pointer;
+    float: right;
+    margin-bottom: 50px;
+}
+
+#txt2{
+    margin-left: 700px;
+    margin-top: 50px;
+    color: white;
+
+}
+    </style>
+
+</body>
+</html>

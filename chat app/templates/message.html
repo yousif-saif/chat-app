@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"
+        integrity="sha512-q/dWJ3kcmjBLU4Qc47E4A9kTB4m3wuTY7vkFJDTZKjTs8jhyGQnaUrxa0Ytd0ssMZhbNua9hE+E7Qv1j+DyZwA=="
+        crossorigin="anonymous"></script>
+    <title>dabody chat app</title>
+</head>
+
+<body>
+<h1>DABODY CHAT</h1>
+
+    <div id="messages">
+        {% for i in messages %}
+            <h3>{{ i }}</h3>
+        {% endfor %}
+    </div>
+
+    <div id="send">
+        <input autofocus placeholder="Message" id="message"/>
+        <button onclick="send_by_button()" id="send-button">send</button>
+    </div>
+
+
+
+    <style>
+        *{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-color: #222;
+}
+
+h1{
+    margin-left: 42%;
+    font-family: system-ui;
+    font-size: 26px;
+    border-bottom: 5px solid white;
+    display: inline-block;
+    color: white;
+}
+
+
+#send-button{
+    padding: 10px;
+    width: 60px;
+    outline: none;
+    border: 3px solid white;
+    border-radius: 10px;
+    background-color: #222;
+    cursor: pointer;
+    font-size: 15px;
+    color: white;
+}
+
+#message{
+    width: 93%;
+    margin-left: 15px;
+    height: 30px;
+    border: 3px solid white;
+    border-radius: 10px;
+    font-size: 18px;
+    padding-bottom: 2px;
+    background-color: #222;
+    color: white;
+    padding: 3px;
+
+}
+
+#send{
+    margin-top: 3%;
+}
+
+#messages{
+    height: 500px;
+    width: 96%;
+    border: 3px solid white;
+    overflow: auto;
+    margin-top: 50px;
+    margin-left: 18px;
+    color: white;
+
+    padding: 10px;
+    font-family: system-ui;
+}
+
+h3{
+    font-family: system-ui;
+}
+/* 
+@media only screen and (max-width: 360px){
+#messages{
+    height: 300px;
+}
+
+#message{
+    width: 83%;
+}
+
+#send-button{
+
+}
+
+} */
+
+    </style>
+
+
+    <script>
+        function scrollToEnd() {
+            let el = document.getElementById("messages")
+            el.scrollTop = el.scrollHeight
+        }
+        scrollToEnd()
+    </script>
+    
+
+    <script>
+        const socket = io();
+
+        let messageContainer = document.querySelector("#messages");
+
+        socket.on("connect", () => {
+            let p = document.createElement("p")
+            messageContainer.appendChild(p)
+        })
+
+        let messageInput = document.getElementById("message")
+        
+        messageInput.addEventListener("keypress", (e) => {
+            if (e.which === 13) {
+                socket.emit("message", messageInput.value)
+                messageInput.value = ""
+            }
+        })
+        
+
+        function send_by_button() {
+            let send_button = document.getElementById("send-button")
+            if (messageInput.value != "") {
+                socket.emit("message", messageInput.value)
+                messageInput.value = ""
+
+            }
+        }
+
+
+        socket.on('message', (message) => {
+            let messageElement = document.createElement("h3")
+            messageElement.innerText = message
+            messageContainer.appendChild(messageElement)
+            scrollToEnd()
+        })
+
+    </script>
+</body>
+
+</html>
